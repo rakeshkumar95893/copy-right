@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copyright Remover Tool 2026 | AI Video Optimization</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -26,6 +25,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: var(--font-main);
+            scroll-behavior: smooth;
         }
 
         body {
@@ -35,7 +35,6 @@
             line-height: 1.6;
         }
 
-        /* Ambient glowing background circles */
         .glow-sphere {
             position: fixed;
             width: 500px;
@@ -49,7 +48,6 @@
         .glow-1 { top: -100px; left: -100px; }
         .glow-2 { top: 40%; right: -150px; background: radial-gradient(circle, rgba(139, 92, 246, 0.12), transparent 70%); }
 
-        /* Navigation */
         header {
             position: sticky;
             top: 0;
@@ -123,10 +121,8 @@
         .nav-btn:hover {
             background: #fff;
             color: #090d16 !important;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
         }
 
-        /* Hero Section */
         .hero {
             position: relative;
             z-index: 1;
@@ -150,17 +146,11 @@
             margin-bottom: 24px;
         }
 
-        .badge-pill i {
-            font-size: 0.75rem;
-            color: #38bdf8;
-        }
-
         .hero h1 {
             font-size: clamp(2.3rem, 5vw, 3.4rem);
             line-height: 1.15;
             font-weight: 800;
             margin-bottom: 18px;
-            letter-spacing: -0.02em;
         }
 
         .gradient-text {
@@ -176,7 +166,6 @@
             margin: 0 auto 36px;
         }
 
-        /* Social Proof Stats */
         .stats-bar {
             display: flex;
             justify-content: center;
@@ -193,11 +182,8 @@
             color: #cbd5e1;
         }
 
-        .stat-item i {
-            color: #fbbf24;
-        }
+        .stat-item i { color: #fbbf24; }
 
-        /* Main Uploader Box */
         .uploader-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -205,8 +191,7 @@
             padding: 40px;
             max-width: 640px;
             margin: 0 auto 60px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
         .upload-area {
@@ -216,13 +201,11 @@
             padding: 45px 20px;
             cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
         }
 
-        .upload-area:hover, .upload-area.dragover {
+        .upload-area:hover {
             border-color: #3b82f6;
             background: rgba(59, 130, 246, 0.05);
-            transform: translateY(-2px);
         }
 
         .upload-icon {
@@ -242,18 +225,14 @@
             font-size: 0.88rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
-        .file-input {
-            display: none;
-        }
+        .file-input { display: none; }
 
         .file-status {
             margin-top: 15px;
             font-size: 0.9rem;
             color: #38bdf8;
-            font-weight: 500;
             display: none;
         }
 
@@ -269,24 +248,19 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
         }
 
-        .btn-action:hover {
-            opacity: 0.95;
-            transform: translateY(-2px);
-            box-shadow: 0 14px 28px rgba(37, 99, 235, 0.45);
-        }
+        .btn-action:hover { opacity: 0.95; transform: translateY(-2px); }
 
-        /* Progress Bar */
         .progress-wrapper {
             margin-top: 20px;
             display: none;
         }
+
         .progress-bar-container {
             width: 100%;
             height: 8px;
@@ -295,12 +269,14 @@
             overflow: hidden;
             margin-bottom: 8px;
         }
+
         .progress-bar-fill {
             width: 0%;
             height: 100%;
             background: linear-gradient(90deg, #3b82f6, #06b6d4, #10b981);
             transition: width 0.3s ease;
         }
+
         .progress-text {
             font-size: 0.85rem;
             color: var(--text-muted);
@@ -308,54 +284,97 @@
             justify-content: space-between;
         }
 
-        /* Feature Cards */
-        .features-grid {
+        /* Pricing Section */
+        .pricing-section {
             max-width: 1100px;
             margin: 0 auto 90px;
             padding: 0 24px;
+            text-align: center;
+        }
+
+        .pricing-section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .pricing-section p {
+            color: var(--text-muted);
+            margin-bottom: 50px;
+        }
+
+        .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .feature-card {
-            background: rgba(17, 24, 39, 0.7);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 28px 24px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             text-align: left;
-            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .feature-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(99, 102, 241, 0.4);
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
         }
 
-        .feature-icon-box {
-            width: 46px;
-            height: 46px;
-            border-radius: 12px;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.25);
+        .pricing-card.popular {
+            border-color: #3b82f6;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 25px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .pricing-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        .price { font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 20px; }
+        .price span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            font-size: 0.95px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: #60a5fa;
-            font-size: 1.25rem;
-            margin-bottom: 18px;
+            gap: 10px;
         }
 
-        .feature-card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
+        .pricing-features li i { color: #10b981; }
+
+        .btn-pricing {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
         }
 
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            line-height: 1.6;
+        .pricing-card.popular .btn-pricing {
+            background: #3b82f6;
+            border-color: #3b82f6;
+        }
+
+        .pricing-card .btn-pricing:hover {
+            background: #fff;
+            color: #000;
         }
 
         /* Footer */
@@ -375,98 +394,35 @@
         }
 
         @media (max-width: 768px) {
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .nav-links {
-                display: none;
-            }
+            .footer-container { grid-template-columns: 1fr; gap: 30px; }
+            .nav-links { display: none; }
         }
 
-        .footer-brand p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 14px;
-            max-width: 320px;
-        }
-
-        .footer-contact {
-            margin-top: 16px;
-            color: #60a5fa;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer-column h4 {
-            color: #f8fafc;
-            font-size: 1.05rem;
-            margin-bottom: 18px;
-            font-weight: 700;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-column ul li a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
-        }
-
-        .footer-column ul li a:hover {
-            color: #fff;
-        }
-
-        .footer-bottom {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding-top: 25px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            font-size: 0.85rem;
-            color: #64748b;
-        }
-
-        .disclaimer-box {
-            font-size: 0.8rem;
-            color: #475569;
-            max-width: 680px;
-        }
+        .footer-brand p { color: var(--text-muted); font-size: 0.9rem; margin-top: 14px; max-width: 320px; }
+        .footer-contact { margin-top: 16px; color: #60a5fa; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+        .footer-column h4 { color: #f8fafc; font-size: 1.05rem; margin-bottom: 18px; font-weight: 700; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 10px; }
+        .footer-column ul li a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .footer-column ul li a:hover { color: #fff; }
+        .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 25px; border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center; }
+        .footer-bottom p { font-size: 0.85rem; color: #64748b; }
+        .disclaimer-box { font-size: 0.8rem; color: #475569; margin-top: 8px; }
     </style>
 </head>
 <body>
 
-    <!-- Ambient glowing backgrounds -->
     <div class="glow-sphere glow-1"></div>
     <div class="glow-sphere glow-2"></div>
 
-    <!-- Navigation Header -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">
-                <div class="logo-icon">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
+                <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
                 <span>Copyright Remover</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#login" class="nav-btn">Log In / Sign Up</a></li>
@@ -474,7 +430,6 @@
         </div>
     </header>
 
-    <!-- Main Hero Section -->
     <main>
         <section class="hero" id="home">
             <div class="badge-pill">
@@ -482,50 +437,28 @@
                 <span>New AI Engine 2.0 Live</span>
             </div>
             
-            <h1>
-                Copyright Remover <br>
-                <span class="gradient-text">Simulation Instantly</span>
-            </h1>
+            <h1>Copyright Remover <br><span class="gradient-text">Simulation Instantly</span></h1>
+            <p>Professional AI deep-clean technology. Upload your video below to simulate advanced content optimization and perceptual hash modification.</p>
 
-            <p>
-                Professional AI deep-clean technology. Upload your video below to simulate advanced content optimization and perceptual hash modification.
-            </p>
-
-            <!-- Social Proof Statistics -->
             <div class="stats-bar">
-                <div class="stat-item">
-                    <i class="fa-solid fa-users"></i>
-                    <span><strong>20k+</strong> Trusted Users</span>
-                </div>
-                <div class="stat-item">
-                    <i class="fa-solid fa-film"></i>
-                    <span><strong>50k+</strong> Videos Processed</span>
-                </div>
-                <div class="stat-item">
-                    <i class="fa-solid fa-star"></i>
-                    <span><strong>4.9/5</strong> Rating</span>
-                </div>
+                <div class="stat-item"><i class="fa-solid fa-users"></i><span><strong>20k+</strong> Trusted Users</span></div>
+                <div class="stat-item"><i class="fa-solid fa-film"></i><span><strong>50k+</strong> Videos Processed</span></div>
+                <div class="stat-item"><i class="fa-solid fa-star"></i><span><strong>4.9/5</strong> Rating</span></div>
             </div>
 
-            <!-- Upload Box Component -->
             <div class="uploader-card">
                 <input type="file" id="videoFileInput" class="file-input" accept="video/mp4,video/avi,video/mkv,video/mov,video/webm">
-                
                 <div class="upload-area" id="dropZone" onclick="document.getElementById('videoFileInput').click()">
-                    <div class="upload-icon">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
-                    </div>
+                    <div class="upload-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
                     <div class="upload-title">Upload your video</div>
                     <div class="upload-subtitle">MP4, AVI, MKV, MOV, WEBM (UP TO 500MB)</div>
                     <div class="file-status" id="fileStatus"></div>
                 </div>
 
                 <button class="btn-action" id="processBtn" onclick="handleSimulation()">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <span>Remove Copyright</span>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i><span>Remove Copyright</span>
                 </button>
 
-                <!-- Processing animation wrapper -->
                 <div class="progress-wrapper" id="progressWrapper">
                     <div class="progress-bar-container">
                         <div class="progress-bar-fill" id="progressBar"></div>
@@ -538,85 +471,89 @@
             </div>
         </section>
 
-        <!-- Feature Highlights Section -->
-        <section class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon-box">
-                    <i class="fa-solid fa-lock"></i>
+        <!-- Pricing Section Added -->
+        <section class="pricing-section" id="pricing">
+            <h2>Flexible Pricing Plans</h2>
+            <p>Choose the simulation package that fits your video optimization needs.</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$9 <span>/ month</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Up to 10 Video Simulations</li>
+                        <li><i class="fa-solid fa-check"></i> Standard Hash Analysis</li>
+                        <li><i class="fa-solid fa-check"></i> Email Support</li>
+                    </ul>
+                    <button class="btn-pricing">Get Started</button>
                 </div>
-                <h3>Secure Link</h3>
-                <p>All uploads are encrypted and processed locally for simulation purposes. Your private media files are protected at all times.</p>
-            </div>
 
-            <div class="feature-card">
-                <div class="feature-icon-box">
-                    <i class="fa-solid fa-brain"></i>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">POPULAR</div>
+                    <h3>Pro Creator</h3>
+                    <div class="price">$29 <span>/ month</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Unlimited Simulations</li>
+                        <li><i class="fa-solid fa-check"></i> Advanced AI Deep-Clean 2.0</li>
+                        <li><i class="fa-solid fa-check"></i> Priority Processing Speed</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Support</li>
+                    </ul>
+                    <button class="btn-pricing">Get Started</button>
                 </div>
-                <h3>AI Simulation</h3>
-                <p>Advanced neural hash normalization for perceptual content analysis, audio phase adjustments, and micro-framing shifts.</p>
-            </div>
 
-            <div class="feature-card">
-                <div class="feature-icon-box">
-                    <i class="fa-solid fa-gauge-high"></i>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$99 <span>/ month</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Team Access (5 Seats)</li>
+                        <li><i class="fa-solid fa-check"></i> Custom API Integrations</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated Cloud Servers</li>
+                    </ul>
+                    <button class="btn-pricing">Contact Sales</button>
                 </div>
-                <h3>Instant Speed</h3>
-                <p>Cloud-based simulation engines ensure 99.9% uptime, rapid video processing, and zero frame lag output generation.</p>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="footer-container">
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <div class="logo-icon">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
+                    <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
                     <span>Copyright Remover</span>
                 </a>
-                <p>The world's most advanced simulation-based video optimization platform. Trusted by content creators worldwide.</p>
+                <p>The world's most advanced simulation-based video optimization platform.</p>
                 <div class="footer-contact">
                     <i class="fa-regular fa-envelope"></i>
                     <span>copyrightremover7@gmail.com</span>
                 </div>
             </div>
 
-            <div class="footer-column" id="pricing">
+            <div class="footer-column">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#login">Login / Sign Up</a></li>
                 </ul>
             </div>
 
-            <div class="footer-column" id="contact">
+            <div class="footer-column">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#terms">Terms of Service</a></li>
-                    <li><a href="#refund">Refund Policy</a></li>
-                    <li><a href="#fairuse">Fair Use Disclaimer</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2026 Copyright Remover. All rights reserved.</p>
-            <p class="disclaimer-box">
-                "This tool is for content optimization simulation only. We do not promote or support copyright infringement."
-            </p>
+            <p class="disclaimer-box">"This tool is for content optimization simulation only. We do not promote or support copyright infringement."</p>
         </div>
     </footer>
 
-    <!-- Interactive Script -->
     <script>
         const fileInput = document.getElementById('videoFileInput');
-        const dropZone = document.getElementById('dropZone');
         const fileStatus = document.getElementById('fileStatus');
         const progressWrapper = document.getElementById('progressWrapper');
         const progressBar = document.getElementById('progressBar');
@@ -631,37 +568,11 @@
             }
         });
 
-        // Drag and drop handlers
-        ['dragenter', 'dragover'].forEach(eventName => {
-            dropZone.addEventListener(eventName, (e) => {
-                e.preventDefault();
-                dropZone.classList.add('dragover');
-            }, false);
-        });
-
-        ['dragleave', 'drop'].forEach(eventName => {
-            dropZone.addEventListener(eventName, (e) => {
-                e.preventDefault();
-                dropZone.classList.remove('dragover');
-            }, false);
-        });
-
-        dropZone.addEventListener('drop', (e) => {
-            const dt = e.dataTransfer;
-            const files = dt.files;
-            if (files.length > 0) {
-                fileInput.files = files;
-                fileStatus.style.display = 'block';
-                fileStatus.textContent = 'Selected: ' + files[0].name + ' (' + (files[0].size / (1024*1024)).toFixed(2) + ' MB)';
-            }
-        });
-
         function handleSimulation() {
             if (!fileInput.files.length) {
-                alert('Pehle koi video file select ya drop karein!');
+                alert('Pehle koi video file select karein!');
                 return;
             }
-
             progressWrapper.style.display = 'block';
             let percent = 0;
             const stages = [
@@ -677,10 +588,8 @@
                 if (percent > 100) {
                     percent = 100;
                     clearInterval(interval);
-                    processStatus.textContent = 'Simulation Complete! (Ready to download)';
-                    setTimeout(() => {
-                        alert('Video processing simulation complete!');
-                    }, 400);
+                    processStatus.textContent = 'Simulation Complete!';
+                    setTimeout(() => alert('Video processing simulation complete!'), 400);
                 } else {
                     progressBar.style.width = percent + '%';
                     processPercent.textContent = percent + '%';
